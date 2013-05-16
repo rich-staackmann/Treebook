@@ -2,21 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.status{
-  border-bottom: solid 1px #CCC;
-  padding: 5px 0;
+.status {
+	border-bottom: solid 1px #CCC;
+	padding: 5px 0;
 }
 
-.status P {
-  margin: 4px 0px;
+.status p {
+	margin: 4px 0;
+}
+
+.status.hover {
+	background: #FAFAFA;
 }
 
 .status .admin {
-  display: none;
+	display: none;
 }
-.status.hover{
-  background: #FAFAFA;
-}
+
 .status.hover .admin {
-  display: inline;
+	display: inline;
 }
