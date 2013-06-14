@@ -8,7 +8,14 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'devise'
 gem 'simple_form'
+gem 'state_machine'
+gem 'factory_girl_rails'
+gem 'draper'
+gem 'js-routes'
 
+group :test do
+	gem 'shoulda'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
