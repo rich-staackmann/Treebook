@@ -5,15 +5,17 @@
 <%= link_to "Post a New Status", new_status_path, class: "btn btn-success" %>
 
 <% @statuses.each do |status| %>
-<div class="status">
-  <strong><%= link_to status.user.full_name, profile_path(status.user) %></strong>
-  <p><%= status.content %></p>
-  <div class="meta">
-    <%= link_to time_ago_in_words(status.created_at) + " ago", status %> 
-    <span class="admin">
-      | <%= link_to "Edit", edit_status_path(status) %> | 
-      <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
-    </span>
-  </div>
-</div>
+  <% if signed_in? && !current_user.has_blocked?(status.user) || !signed_in? %>
+    <div class="status">
+      <strong><%= link_to status.user.full_name, profile_path(status.user) %></strong>
+      <p><%= status.content %></p>
+      <div class="meta">
+        <%= link_to time_ago_in_words(status.created_at) + " ago", status %> 
+        <span class="admin">
+          | <%= link_to "Edit", edit_status_path(status) %> | 
+          <%= link_to "Delete", status, method: :delete, data: { confirm: "Are you sure your want to delete this status?"} %>
+        </span>
+      </div>
+    </div>
+  <% end %>
 <% end %>
