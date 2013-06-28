@@ -12,7 +12,7 @@ gem 'state_machine'
 gem 'factory_girl_rails'
 gem 'draper'
 gem 'js-routes'
-
+gem "paperclip", "~> 3.0"
 group :test do
 	gem 'shoulda'
 end
